@@ -20,7 +20,7 @@ app.post("/", function (req, res) { //a post request to the "/" route
     const url = `https://api.openweathermap.org/geo/1.0/direct?q=${cityName},${stateCode},US&limit=&appid=${apiKey}`;
     https.get(url, function (response) {//getting the https url and response
       response.on("data", (data) => {//listen for the data
-        const geoData = JSON.parse(data)[0]; //geoData that parses the JSON response
+        const geoData = JSON.parse(data)[0]; //geoData that parses the JSON data
         console.log(geoData);
         const lat = geoData.lat; //grabbing the lattitude
         console.log(lat);
