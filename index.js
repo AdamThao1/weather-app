@@ -33,17 +33,13 @@ app.post("/", function (req, res) { //a post request to the "/" route
             const tempature = jsondata.main.temp;//show temperature
             const des = jsondata.weather[0].description;//show the description
             const icon = jsondata.weather[0].icon;//show the icon
-            const imageURL = //grab the image url
-              "http://openweathermap.org/img/wn/" + icon + "@2x.png";
+            const imageURL = "http://openweathermap.org/img/wn/" + icon + "@2x.png";//grab the image url
             console.log("Here is the Weather Currently");
   
-            res.write(` 
-              
+            res.write(`  
             <h1> The tempature in ${cityName}, ${geoData.state} is ${tempature} degrees</h1>
             <p>The weather description is ${des}</p>
-            <img src="${imageURL}">` 
-            //the html response built using the method. 
-          
+            <img src="${imageURL}">` //the html response built using the method. 
             );
           });
         });
